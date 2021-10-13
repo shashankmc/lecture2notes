@@ -312,7 +312,8 @@ def is_content_added(
     )
     first_contours = cv2.findContours(
         first_canny_dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
-    )[0]
+    )
+    first_contours = first_contours[0] if len(first_contours) == 2 else first_contours[1]
     first_contour_area = sum(
         cv2.contourArea(x)
         for x in first_contours
@@ -338,7 +339,8 @@ def is_content_added(
     )
     second_contours = cv2.findContours(
         second_canny_dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
-    )[0]
+    )
+    second_contours = second_contours[0] if len(second_contours) == 2 else second_contours[1]
     second_contour_area = sum(
         cv2.contourArea(x)
         for x in second_contours
