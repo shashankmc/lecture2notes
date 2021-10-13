@@ -12,6 +12,7 @@ from timeit import default_timer as timer
 # Step slide structure analysis imports
 # Step perspective crop imports
 # Step black border removal imports
+'''
 from . import (
     border_removal,
     corner_crop_transform,
@@ -23,7 +24,7 @@ from . import (
 '''
 ## If the compiler throws an error for relative import
 import border_removal, corner_crop_transform, figure_detection, imghash, sift_matcher,slide_structure_analysis
-'''
+
 
 # Step cluster slides imports
 #from .cluster import ClusterFilesystem
