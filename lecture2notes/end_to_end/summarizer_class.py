@@ -20,15 +20,29 @@ from . import (
     sift_matcher,
     slide_structure_analysis,
 )
+'''
+## If the compiler throws an error for relative import
+import border_removal, corner_crop_transform, figure_detection, imghash, sift_matcher,slide_structure_analysis
+'''
 
 # Step cluster slides imports
-from .cluster import ClusterFilesystem
+#from .cluster import ClusterFilesystem
+
+# For relative import error
+from cluster import ClusterFilesystem
 
 # Step extract frames imports
-from .frames_extractor import extract_frames
-from .helpers import copy_all, frame_number_from_filename, gen_unique_id
-from .segment_cluster import SegmentCluster
+#from .frames_extractor import extract_frames
+#from .helpers import copy_all, frame_number_from_filename, gen_unique_id
+#from .segment_cluster import SegmentCluster
 
+
+# alternative for relative error import
+from frames_extractor import extract_frames
+from helpers import copy_all, frame_number_from_filename, gen_unique_id
+from segment_cluster import SegmentCluster
+
+'''
 # Step classify slides imports
 from .slide_classifier import classify_frames
 from .spell_check import SpellChecker
@@ -41,9 +55,24 @@ from .summarization_approaches import (
     keyword_based_ext,
     structured_joined_sum,
 )
+'''
+# to rid of relative error import
+from slide_classifier import classify_frames
+from spell_check import SpellChecker
+from summarization_approaches import (
+    cluster,
+    full_sents,
+    generic_abstractive,
+    generic_extractive_sumy,
+    get_complete_sentences,
+    keyword_based_ext,
+    structured_joined_sum,
+)
 
 # Step transcribe audio imports
-from .transcribe import transcribe_main as transcribe
+# from .transcribe import transcribe_main as transcribe
+
+from transcribe import transcribe_main as transcribe
 
 logger = logging.getLogger(__name__)
 
@@ -181,7 +210,7 @@ class LectureSummarizer:
             frames_dir, model_path=self.params.slide_classifier_model_path
         )
         self.frames_sorted_dir = frames_sorted_dir
-
+    # model_path = 'model_best.ckpt' ## The code kept throwing an error for this directory
     @time_this
     def step_black_border_removal(self):
         self.frames_sorted_dir = getattr(

@@ -10,8 +10,10 @@ from pythonRLSA import rlsa
 from skimage.measure.entropy import shannon_entropy
 from tqdm import tqdm
 
-from .helpers import frame_number_filename_mapping
-from .text_detection import get_text_bounding_boxes, load_east
+#from .helpers import frame_number_filename_mapping
+#from .text_detection import get_text_bounding_boxes, load_east
+from helpers import frame_number_filename_mapping
+from text_detection import get_text_bounding_boxes, load_east
 
 logger = logging.getLogger(__name__)
 

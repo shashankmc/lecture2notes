@@ -9,9 +9,9 @@ import numpy as np
 from imutils import auto_canny
 from tqdm import tqdm
 
-from .corner_crop_transform import persp_transform
-from .figure_detection import area_of_overlapping_rectangles, convert_coords_to_corners
-from .helpers import frame_number_from_filename
+from corner_crop_transform import persp_transform
+from figure_detection import area_of_overlapping_rectangles, convert_coords_to_corners
+from helpers import frame_number_from_filename
 
 logger = logging.getLogger(__name__)
 

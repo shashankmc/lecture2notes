@@ -13,7 +13,7 @@ from skimage import img_as_float
 from skimage.feature import peak_local_max
 from tqdm import tqdm
 
-from .helpers import frame_number_from_filename
+from helpers import frame_number_from_filename
 
 prev_line_num = 0
 logger = logging.getLogger(__name__)

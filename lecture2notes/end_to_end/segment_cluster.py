@@ -9,8 +9,8 @@ from PIL import Image
 from scipy import spatial
 from tqdm import tqdm
 
-from ..models.slide_classifier import inference
-from .helpers import make_dir_if_not_exist
+from models.slide_classifier import inference
+from helpers import make_dir_if_not_exist
 
 logger = logging.getLogger(__name__)
 

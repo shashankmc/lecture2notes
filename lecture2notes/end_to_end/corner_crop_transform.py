@@ -13,8 +13,8 @@ import numpy as np
 from pygifsicle import optimize
 from tqdm import tqdm
 
-from .helpers import make_dir_if_not_exist
-#from helpers import make_dir_if_not_exist
+#from .helpers import make_dir_if_not_exist
+from helpers import make_dir_if_not_exist
 
 logger = logging.getLogger(__name__)
 

@@ -5,9 +5,9 @@ import shutil
 from PIL import Image
 from tqdm import tqdm
 
-from ..models.slide_classifier import inference  # pylint: disable=wrong-import-position
-from ..models.slide_classifier.custom_nnmodules import *  # noqa: F403,F401
-from .helpers import make_dir_if_not_exist
+from models.slide_classifier import inference  # pylint: disable=wrong-import-position
+from models.slide_classifier.custom_nnmodules import *  # noqa: F403,F401
+from helpers import make_dir_if_not_exist
 
 logger = logging.getLogger(__name__)
 
@@ -27,6 +27,7 @@ def classify_frames(
     Returns:
         [tuple]: (frames_sorted_dir, certainties, percent_wrong)
     """
+    # model_path = 'model_best.ckpt'
     model = inference.load_model(model_path)
 
     certainties = []

@@ -19,7 +19,7 @@ from tqdm import tqdm
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Tokenizer
 from vosk import KaldiRecognizer, Model
 
-from ..transcript_downloader import TranscriptDownloader
+from transcript_downloader import TranscriptDownloader
 from . import webrtcvad_utils
 
 logger = logging.getLogger(__name__)

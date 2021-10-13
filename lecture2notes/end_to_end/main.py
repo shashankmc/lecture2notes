@@ -3,8 +3,8 @@
 import argparse
 import logging
 
-from ..models.slide_classifier.custom_nnmodules import *  # noqa: F403,F401
-from .summarizer_class import LectureSummarizer
+from models.slide_classifier.custom_nnmodules import *  # noqa: F403,F401
+from summarizer_class import LectureSummarizer
 
 logger = logging.getLogger(__name__)
 
