@@ -27,7 +27,7 @@ def classify_frames(
     Returns:
         [tuple]: (frames_sorted_dir, certainties, percent_wrong)
     """
-    # model_path = 'model_best.ckpt'
+    model_path = 'model_best.ckpt'
     model = inference.load_model(model_path)
 
     certainties = []
