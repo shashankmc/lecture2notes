@@ -14,6 +14,7 @@ from pygifsicle import optimize
 from tqdm import tqdm
 
 from .helpers import make_dir_if_not_exist
+#from helpers import make_dir_if_not_exist
 
 logger = logging.getLogger(__name__)
 
@@ -80,7 +81,7 @@ def cluster_points(points, nclusters):
 def remove_contours(edges, contour_removal_threshold):
     """Remove contours from an edge map by deleting contours shorter than ``contour_removal_threshold``."""
     result = np.full_like(edges, 0, dtype="uint8")
-    contours, hierarchy = cv2.findContours(
+    _, contours, hierarchy = cv2.findContours(
         edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE
     )
 
