@@ -252,11 +252,17 @@ def does_camera_move_all_in_folder(folder_path):
         movement_detection_values.append(movement_detection)
         previous_image = current_image
 
-    average_move_value = sum(move_values) / len(move_values)
-    movement_detection_percentage = sum(movement_detection_values) / len(
-        movement_detection_values
-    )
-    max_move_value = max(move_values)
+    if len(move_values) > 0:
+        average_move_value = sum(move_values) / len(move_values)
+        max_move_value = max(move_values)
+    if len(movement_detection_values) > 0:
+        movement_detection_percentage = sum(movement_detection_values) / len(
+            movement_detection_values
+        )
+    else:
+        average_move_value = 0
+        max_move_value = 0
+        movement_detection_percentage = 0
     return movement_detection_percentage, average_move_value, max_move_value
 
 
@@ -371,7 +377,7 @@ def match_features(
     presenter_slide_path,
     min_match_count=33,
     min_area_percent=0.37,
-    do_motion_detection=True,
+    do_motion_detection=False,
 ):
     """Match features between images in `slide_path` and `presenter_slide_path`.
     The images in `slide_path` are the queries to the matching algorithm and the

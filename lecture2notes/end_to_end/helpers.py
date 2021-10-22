@@ -40,7 +40,10 @@ def copy_all(list_path_files, output_dir, move=False):
 
 
 def frame_number_from_filename(filename):
-    return int(re.search(r"(?<=\_)[0-9]+(?=\_|.)", filename).group(0))
+    if re.search(r"(?<=\_)[0-9]+(?=\_|.)", filename) == None:
+        return 0
+    else:
+        return int(re.search(r"(?<=\_)[0-9]+(?=\_|.)", filename).group(0))
 
 
 def frame_number_filename_mapping(path, filenames_only=True):
