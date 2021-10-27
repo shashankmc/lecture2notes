@@ -376,7 +376,7 @@ def find_page_contours(
             meets the criteria.
     """
     # Getting contours
-    contours, hierarchy = cv2.findContours(
+    _, contours, hierarchy = cv2.findContours(
         edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE
     )
 
